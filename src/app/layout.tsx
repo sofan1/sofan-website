@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mnsofan.com"),
+  metadataBase: new URL("https://mnsofan.space-z.ai"),
   title: "SOFAN — Premium Tech Development & Digital Marketing | UAE",
   description:
     "Get premium tech development and digital marketing across the UAE with guaranteed fast delivery. Affordable websites, custom web apps, and SEO campaigns built to attract both local Arab and international clients. Serving Dubai, Abu Dhabi, and all emirates.",
@@ -58,6 +58,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  verification: {
+    google: "Bi7L7dSKuVWKps99kkGvdhYJfekKvEhXX_YbZTrWKMU",
   },
 };
 
