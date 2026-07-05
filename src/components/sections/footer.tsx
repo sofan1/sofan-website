@@ -44,7 +44,7 @@ export function Footer({ onChatClick }: { onChatClick: () => void }) {
               onClick={onChatClick}
               className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 bg-[#C9A84C]/[0.06] border border-[#C9A84C]/15 text-[#C9A84C] font-semibold text-[12px] rounded-full hover:bg-[#C9A84C]/15 transition-all duration-300"
             >
-              Chat with Sofia AI
+              Chat with Sofan AI Agent
             </button>
           </div>
 

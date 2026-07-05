@@ -22,8 +22,8 @@ type Msg = {
   content: string;
 };
 
-const SOFIA_GREETING =
-  "Hi, I'm Sofia — SOFAN's AI assistant. I help with web development, SEO, and digital growth across the UAE. How can I help you today?";
+const SOFAN_GREETING =
+  "Hi, I'm the Sofan AI Agent — I help with web development, SEO, and digital growth across the UAE. How can I help you today?";
 
 export function ChatWidget() {
   const { open, setOpen } = useChat();
@@ -54,7 +54,7 @@ export function ChatWidget() {
       // Show greeting on first open
       if (!greetedRef.current) {
         greetedRef.current = true;
-        setMessages([{ role: "assistant", content: SOFIA_GREETING }]);
+        setMessages([{ role: "assistant", content: SOFAN_GREETING }]);
       }
     }
   }, [open]);
@@ -126,7 +126,7 @@ export function ChatWidget() {
       {/* Floating launcher button (visible when closed) */}
       <button
         onClick={() => setOpen(true)}
-        aria-label="Open chat with Sofia AI agent"
+        aria-label="Open chat with Sofan AI Agent"
         className={cn(
           "fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-[#C9A84C] hover:bg-[#E2CC7E] flex items-center justify-center shadow-[0_4px_30px_rgba(201,168,76,0.4)] transition-all duration-500 group",
           open && "scale-0 opacity-0 pointer-events-none"
@@ -138,7 +138,7 @@ export function ChatWidget() {
           <span className="w-2 h-2 bg-white rounded-full" />
         </span>
         <span className="absolute right-full mr-3 px-3 py-1.5 bg-[#111] border border-[#C9A84C]/20 rounded-lg text-[12px] text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none hidden sm:block">
-          Chat with Sofia AI
+          Chat with Sofan AI Agent
         </span>
       </button>
 
@@ -164,7 +164,7 @@ export function ChatWidget() {
                   <div className="relative w-10 h-10 rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/30 flex items-center justify-center overflow-hidden">
                     <Image
                       src="/mnsofan-logo.png"
-                      alt="Sofia"
+                      alt="Sofan AI Agent"
                       fill
                       sizes="40px"
                       className="object-cover"
@@ -175,7 +175,7 @@ export function ChatWidget() {
                 <div>
                   <div className="flex items-center gap-1.5">
                     <span className="text-[14px] font-bold text-white">
-                      Sofia
+                      Sofan AI Agent
                     </span>
                     <Sparkles className="w-3 h-3 text-[#C9A84C]" />
                   </div>

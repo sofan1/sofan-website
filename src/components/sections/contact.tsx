@@ -92,7 +92,7 @@ export function Contact({ onChatClick }: { onChatClick: () => void }) {
     {
       icon: MessageCircle,
       title: "WhatsApp",
-      sub: "Via AutoClaw Agent",
+      sub: "Fast response, 24/7",
       action: "Connect via Agent",
       href: site.whatsappLink,
       external: true,
