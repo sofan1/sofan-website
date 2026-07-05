@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Contact form submissions from the website
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  service   String?
+  budget    String?
+  message   String
+  status    String   @default("new") // new | contacted | closed
+  source    String   @default("website") // website | chat
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+// Chat conversation messages for the AI agent (enables escalation + history)
+model ChatMessage {
+  id        String   @id @default(cuid())
+  sessionId String
+  role      String // user | assistant | system
+  content   String
+  escalated Boolean  @default(false) // true when handed to human / WhatsApp
+  createdAt DateTime @default(now())
+
+  @@index([sessionId])
+  @@index([createdAt])
+}

@@ -1,0 +1,489 @@
+     1→     1→<!DOCTYPE html>
+     2→     2→<html lang="en" class="scroll-smooth">
+     3→     3→<head>
+     4→     4→    <meta charset="UTF-8">
+     5→     5→    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→     6→    <title>MN Sofan — Business Development Services | UAE Tech & Digital Marketing</title>
+     7→     7→    <meta name="description" content="Premium tech development and digital marketing across the UAE. Affordable websites, custom web apps, and SEO campaigns. Serving Dubai, Abu Dhabi, and all emirates.">
+     8→     8→
+     9→     9→    <!-- Favicon -->
+    10→    10→    <link rel="icon" type="image/png" href="https://z-cdn-media.chatglm.cn/files/2708862f-1650-43ba-8f61-1600c11c6525.png?auth_key=1883212066-e3f2fcfccb4f46f4838fc8a470a3cbd9-0-37f6e50c8a96c36397bd04e3218cf5c8">
+    11→    11→
+    12→    12→    <!-- Google Fonts -->
+    13→    13→    <link rel="preconnect" href="https://fonts.googleapis.com">
+    14→    14→    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    15→    15→    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    16→    16→
+    17→    17→    <!-- Tailwind CSS -->
+    18→    18→    <script src="https://cdn.tailwindcss.com"></script>
+    19→    19→    <script>
+    20→    20→      tailwind.config = {
+    21→    21→        theme: {
+    22→    22→          extend: {
+    23→    23→            fontFamily: {
+    24→    24→              sans: ['Inter', 'sans-serif'],
+    25→    25→              display: ['Playfair Display', 'serif'],
+    26→    26→            },
+    27→    27→          }
+    28→    28→        }
+    29→    29→      }
+    30→    30→    </script>
+    31→    31→
+    32→    32→    <!-- Lucide Icons -->
+    33→    33→    <script src="https://unpkg.com/lucide@latest"></script>
+    34→    34→
+    35→    35→    <style>
+    36→    36→      ::selection { background: #C9A84C; color: #0A0A0A; }
+    37→    37→      ::-webkit-scrollbar { width: 6px; }
+    38→    38→      ::-webkit-scrollbar-track { background: #0A0A0A; }
+    39→    39→      ::-webkit-scrollbar-thumb { background: #C9A84C44; border-radius: 3px; }
+    40→    40→      ::-webkit-scrollbar-thumb:hover { background: #C9A84C88; }
+    41→    41→      img::selection { background: transparent; }
+    42→    42→
+    43→    43→      /* ═══ FORCED CIRCULAR LOGO ═══ */
+    44→    44→      .logo-circle {
+    45→    45→          border-radius: 50% !important;
+    46→    46→          overflow: hidden !important;
+    47→    47→          display: flex !important;
+    48→    48→          align-items: center !important;
+    49→    49→          justify-content: center !important;
+    50→    50→          aspect-ratio: 1 / 1 !important;
+    51→    51→      }
+    52→    52→      .logo-circle img, .logo-img {
+    53→    53→          width: 100% !important;
+    54→    54→          height: 100% !important;
+    55→    55→          object-fit: cover !important;
+    56→    56→          border-radius: 50% !important;
+    57→    57→          display: block !important;
+    58→    58→      }
+    59→    59→
+    60→    60→      /* ═══ ANIMATIONS ═══ */
+    61→    61→      @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    62→    62→      @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+    63→    63→      @keyframes pulseGold { 0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.4); } 50% { box-shadow: 0 0 0 14px rgba(201,168,76,0); } }
+    64→    64→      @keyframes typingBounce { 0%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-5px); } }
+    65→    65→
+    66→    66→      .animate-fade-in-up { animation: fadeInUp 0.9s cubic-bezier(0.22,1,0.36,1) forwards; }
+    67→    67→      .delay-200 { animation-delay: 200ms; }
+    68→    68→      .delay-400 { animation-delay: 400ms; }
+    69→    69→      .delay-500 { animation-delay: 500ms; }
+    70→    70→      .delay-600 { animation-delay: 600ms; }
+    71→    71→      .delay-700 { animation-delay: 700ms; }
+    72→    72→
+    73→    73→      .gold-shimmer {
+    74→    74→          background: linear-gradient(90deg, #C9A84C, #E2CC7E, #C9A84C, #E2CC7E, #C9A84C);
+    75→    75→          background-size: 300% auto;
+    76→    76→          -webkit-background-clip: text;
+    77→    77→          -webkit-text-fill-color: transparent;
+    78→    78→          background-clip: text;
+    79→    79→          animation: shimmer 4s linear infinite;
+    80→    80→      }
+    81→    81→      .glass-card { background: rgba(17,17,17,0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.04); }
+    82→    82→      .reveal { opacity: 0; transform: translateY(35px); transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+    83→    83→      .reveal.visible { opacity: 1; transform: translateY(0); }
+    84→    84→      .tilt-card { transform-style: preserve-3d; transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease; }
+    85→    85→      .tilt-card:hover { box-shadow: 0 20px 50px rgba(0,0,0,0.3), 0 0 0 1px rgba(201,168,76,0.08); }
+    86→    86→      .magnetic-btn { transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), background-color 0.3s ease, box-shadow 0.3s ease; }
+    87→    87→      .nav-link::after { content: ''; position: absolute; bottom: 4px; left: 16px; right: 16px; height: 1px; background: #C9A84C; transform: scaleX(0); transform-origin: right; transition: transform 0.4s cubic-bezier(0.22,1,0.36,1); }
+    88→    88→      .nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
+    89→    89→      .chat-widget { transition: width 0.5s cubic-bezier(0.22,1,0.36,1), height 0.5s cubic-bezier(0.22,1,0.36,1), border-radius 0.5s cubic-bezier(0.22,1,0.36,1); }
+    90→    90→      .chat-widget.collapsed { width: 60px; height: 60px; border-radius: 50%; }
+    91→    91→      .chat-widget.expanded { width: 400px; height: 600px; border-radius: 20px; }
+    92→    92→      @media (max-width: 480px) { .chat-widget.expanded { width: calc(100vw - 32px); height: 75vh; right: 16px !important; bottom: 16px !important; } }
+    93→    93→      .typing-dot { animation: typingBounce 1.4s infinite ease-in-out; }
+    94→    94→      .typing-dot:nth-child(1) { animation-delay: 0s; }
+    95→    95→      .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    96→    96→      .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    97→    97→      .service-card::before { content: ''; position: absolute; inset: 0; border-radius: 1rem; padding: 1px; background: linear-gradient(135deg, rgba(201,168,76,0) 0%, rgba(201,168,76,0.1) 50%, rgba(201,168,76,0) 100%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity 0.5s ease; }
+    98→    98→      .service-card:hover::before { opacity: 1; }
+    99→    99→      .hamburger-lines.active #hb1 { transform: translateY(6px) rotate(45deg); }
+   100→   100→      .hamburger-lines.active #hb2 { opacity: 0; transform: translateX(-10px); }
+   101→   101→      .hamburger-lines.active #hb3 { transform: translateY(-6px) rotate(-45deg); }
+   102→   102→      iframe[src*="google.com/maps"] { border-radius: 1.5rem; }
+   103→   103→    </style>
+   104→   104→</head>
+   105→   105→
+   106→   106→<body class="bg-[#0A0A0A] text-white font-sans antialiased overflow-x-hidden">
+   107→   107→
+   108→   108→<!-- Scroll Progress Bar -->
+   109→   109→<div id="scrollProgress" class="fixed top-0 left-0 h-[3px] z-[100] transition-all duration-150" style="width:0%; background: linear-gradient(90deg, #C9A84C, #E2CC7E, #C9A84C);"></div>
+   110→   110→
+   111→   111→<!-- Custom Cursor -->
+   112→   112→<div id="cursorDot" class="fixed w-3 h-3 bg-[#C9A84C] rounded-full pointer-events-none z-[9999] mix-blend-difference transition-transform duration-75 hidden lg:block" style="transform:translate(-50%,-50%)"></div>
+   113→   113→<div id="cursorRing" class="fixed w-10 h-10 border border-[#C9A84C]/40 rounded-full pointer-events-none z-[9998] transition-all duration-200 hidden lg:block" style="transform:translate(-50%,-50%)"></div>
+   114→   114→
+   115→   115→<!-- ═══════════════════════════════════════════════════════════════ -->
+   116→   116→<!-- NAVIGATION -->
+   117→   117→<!-- ═══════════════════════════════════════════════════════════════ -->
+   118→   118→<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+   119→   119→    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+   120→   120→        <div class="flex items-center justify-between h-20">
+   121→   121→            <!-- Logo Circle -->
+   122→   122→            <a href="#" class="group relative flex items-center gap-3.5">
+   123→   123→                <div class="logo-circle w-[52px] h-[52px] border-2 border-[#C9A84C]/30 group-hover:border-[#C9A84C] transition-all duration-500 group-hover:shadow-[0_0_25px_rgba(201,168,76,0.3)] flex-shrink-0 bg-[#0A0A0A]">
+   124→   124→                    <img src="https://z-cdn-media.chatglm.cn/files/2708862f-1650-43ba-8f61-1600c11c6525.png?auth_key=1883212066-e3f2fcfccb4f46f4838fc8a470a3cbd9-0-37f6e50c8a96c36397bd04e3218cf5c8" alt="MN Sofan" class="logo-img">
+   125→   125→                </div>
+   126→   126→                <div class="hidden sm:block">
+   127→   127→                    <span class="block text-[13px] font-bold tracking-[0.15em] text-white group-hover:text-[#C9A84C] transition-colors duration-300">MN SOFAN</span>
+   128→   128→                    <span class="block text-[8px] font-semibold tracking-[0.3em] text-[#C9A84C]/50 uppercase">Business Development</span>
+   129→   129→                </div>
+   130→   130→            </a>
+   131→   131→
+   132→   132→            <!-- Desktop Nav -->
+   133→   133→            <div class="hidden lg:flex items-center gap-1">
+   134→   134→                <a href="#services" class="nav-link relative px-4 py-2 text-[13px] font-medium text-gray-400 hover:text-[#C9A84C] transition-colors duration-300">Services</a>
+   135→   135→                <a href="#why-us" class="nav-link relative px-4 py-2 text-[13px] font-medium text-gray-400 hover:text-[#C9A84C] transition-colors duration-300">Why Us</a>
+   136→   136→                <a href="#locations" class="nav-link relative px-4 py-2 text-[13px] font-medium text-gray-400 hover:text-[#C9A84C] transition-colors duration-300">Locations</a>
+   137→   137→                <a href="#process" class="nav-link relative px-4 py-2 text-[13px] font-medium text-gray-400 hover:text-[#C9A84C] transition-colors duration-300">Process</a>
+   138→   138→                <a href="#contact" class="nav-link relative px-4 py-2 text-[13px] font-medium text-gray-400 hover:text-[#C9A84C] transition-colors duration-300">Contact</a>
+   139→   139→                <button onclick="toggleChat()" class="magnetic-btn ml-4 px-6 py-2.5 bg-[#C9A84C] text-[#0A0A0A] font-bold text-[13px] rounded-full hover:bg-[#E2CC7E] transition-all duration-300 shadow-lg hover:shadow-[0_0_25px_rgba(201,168,76,0.25)]">Get Free Quote</button>
+   140→   140→            </div>
+   141→   141→
+   142→   142→            <!-- Mobile Toggle -->
+   143→   143→            <button id="mobileMenuBtn" class="lg:hidden relative w-10 h-10 flex items-center justify-center text-gray-300 hover:text-[#C9A84C] transition-colors" aria-label="Toggle Menu">
+   144→   144→                <div class="hamburger-lines">
+   145→   145→                    <span class="block w-6 h-[2px] bg-current transition-all duration-300 origin-center" id="hb1"></span>
+   146→   146→                    <span class="block w-4 h-[2px] bg-current transition-all duration-300 mt-1.5" id="hb2"></span>
+   147→   147→                    <span class="block w-6 h-[2px] bg-current transition-all duration-300 mt-1.5 origin-center" id="hb3"></span>
+   148→   148→                </div>
+   149→   149→            </button>
+   150→   150→        </div>
+   151→   151→    </div>
+   152→   152→
+   153→   153→    <!-- Mobile Menu -->
+   154→   154→    <div id="mobileMenu" class="lg:hidden fixed inset-0 bg-[#0A0A0A]/98 backdrop-blur-xl z-40 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-500">
+   155→   155→        <div class="text-center space-y-8">
+   156→   156→            <a href="#services" class="block text-3xl font-display font-bold text-white hover:text-[#C9A84C] transition-colors" onclick="closeMobileMenu()">Services</a>
+   157→   157→            <a href="#why-us" class="block text-3xl font-display font-bold text-white hover:text-[#C9A84C] transition-colors" onclick="closeMobileMenu()">Why Us</a>
+   158→   158→            <a href="#locations" class="block text-3xl font-display font-bold text-white hover:text-[#C9A84C] transition-colors" onclick="closeMobileMenu()">Locations</a>
+   159→   159→            <a href="#process" class="block text-3xl font-display font-bold text-white hover:text-[#C9A84C] transition-colors" onclick="closeMobileMenu()">Process</a>
+   160→   160→            <a href="#contact" class="block text-3xl font-display font-bold text-white hover:text-[#C9A84C] transition-colors" onclick="closeMobileMenu()">Contact</a>
+   161→   161→            <button onclick="toggleChat(); closeMobileMenu();" class="mt-8 px-8 py-4 bg-[#C9A84C] text-[#0A0A0A] font-bold rounded-full text-lg">Get Free Quote</button>
+   162→   162→        </div>
+   163→   163→    </div>
+   164→   164→</nav>
+   165→   165→
+   166→   166→<!-- ═══════════════════════════════════════════════════════════════ -->
+   167→   167→<!-- HERO SECTION -->
+   168→   168→<!-- ═══════════════════════════════════════════════════════════════ -->
+   169→   169→<section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+   170→   170→    <div class="absolute inset-0">
+   171→   171→        <img src="https://picsum.photos/seed/dubai-skyline-gold/1920/1080.jpg" alt="UAE Skyline" class="w-full h-full object-cover opacity-25 scale-110" id="heroBg">
+   172→   172→        <div class="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] via-[#0A0A0A]/95 to-[#0A0A0A]/70"></div>
+   173→   173→        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-[#0A0A0A]/60"></div>
+   174→   174→    </div>
+   175→   175→    <div class="absolute top-20 left-[10%] w-px h-40 bg-gradient-to-b from-[#C9A84C]/20 to-transparent hidden lg:block"></div>
+   176→   176→    <div class="absolute bottom-20 right-[10%] w-px h-40 bg-gradient-to-t from-[#C9A84C]/20 to-transparent hidden lg:block"></div>
+   177→   177→
+   178→   178→    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 pt-36 pb-24 w-full">
+   179→   179→        <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+   180→   180→            <div class="lg:col-span-7">
+   181→   181→                <div class="animate-fade-in-up" style="opacity:0;animation-fill-mode:forwards">
+   182→   182→                    <span class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[#C9A84C]/20 bg-[#C9A84C]/[0.04] text-[#C9A84C] text-[10px] font-bold tracking-[0.25em] uppercase mb-8">
+   183→   183→                        <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C9A84C] opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-[#C9A84C]"></span></span>
+   184→   184→                        UAE's Trusted Tech Partner
+   185→   185→                    </span>
+   186→   186→                </div>
+   187→   187→                <h1 class="animate-fade-in-up delay-200 font-display text-[clamp(2.5rem,6vw,5rem)] font-bold leading-[1.05] tracking-tight mb-7" style="opacity:0;animation-fill-mode:forwards">
+   188→   188→                    Premium Tech<br>
+   189→   189→                    <span class="relative inline-block"><span class="relative z-10 gold-shimmer">& Digital Marketing</span><span class="absolute bottom-2 left-0 right-0 h-3 bg-[#C9A84C]/10 -skew-x-3"></span></span><br>
+   190→   190→                    <span class="text-gray-400">Across the UAE</span>
+   191→   191→                </h1>
+   192→   192→                <p class="animate-fade-in-up delay-400 text-[17px] text-gray-400 leading-relaxed mb-10 max-w-xl" style="opacity:0;animation-fill-mode:forwards">
+   193→   193→                    Guaranteed fast delivery. We create affordable websites, custom web apps, and SEO campaigns built to attract both local Arab and international clients.
+   194→   194→                </p>
+   195→   195→                <div class="animate-fade-in-up delay-500 flex flex-wrap gap-4" style="opacity:0;animation-fill-mode:forwards">
+   196→   196→                    <a href="#contact" class="magnetic-btn group inline-flex items-center gap-2.5 px-8 py-4 bg-[#C9A84C] text-[#0A0A0A] font-bold text-[14px] rounded-full hover:bg-[#E2CC7E] transition-all duration-300 shadow-[0_0_30px_rgba(201,168,76,0.15)] hover:shadow-[0_0_40px_rgba(201,168,76,0.25)]">
+   197→   197→                        Start Your Project <i data-lucide="arrow-right" class="w-[18px] h-[18px] group-hover:translate-x-1.5 transition-transform duration-300"></i>
+   198→   198→                    </a>
+   199→   199→                    <button onclick="toggleChat()" class="magnetic-btn group inline-flex items-center gap-2.5 px-8 py-4 border border-[#C9A84C]/25 text-[#C9A84C] font-bold text-[14px] rounded-full hover:bg-[#C9A84C]/[0.06] hover:border-[#C9A84C]/40 transition-all duration-300">
+   200→   200→                        <i data-lucide="bot" class="w-[18px] h-[18px]"></i> Chat with AI Agent
+   201→   201→                    </button>
+   202→   202→                </div>
+   203→   203→            </div>
+   204→   204→            <div class="lg:col-span-5 hidden lg:grid grid-cols-2 gap-4 animate-fade-in delay-600" style="opacity:0;animation-fill-mode:forwards">
+   205→   205→                <div class="tilt-card glass-card rounded-2xl p-6 hover:border-[#C9A84C]/25 transition-all duration-500"><div class="w-11 h-11 bg-[#C9A84C]/[0.08] rounded-xl flex items-center justify-center mb-5"><i data-lucide="zap" class="w-5 h-5 text-[#C9A84C]"></i></div><h3 class="text-3xl font-bold text-white mb-1 tracking-tight">48<span class="text-[#C9A84C]">h</span></h3><p class="text-[12px] text-gray-500 font-medium tracking-wide uppercase">Avg Delivery</p></div>
+   206→   206→                <div class="tilt-card glass-card rounded-2xl p-6 hover:border-[#C9A84C]/25 transition-all duration-500 mt-8"><div class="w-11 h-11 bg-[#C9A84C]/[0.08] rounded-xl flex items-center justify-center mb-5"><i data-lucide="shield-check" class="w-5 h-5 text-[#C9A84C]"></i></div><h3 class="text-3xl font-bold text-white mb-1 tracking-tight">100<span class="text-[#C9A84C]">%</span></h3><p class="text-[12px] text-gray-500 font-medium tracking-wide uppercase">UAE Compliant</p></div>
+   207→   207→                <div class="tilt-card glass-card rounded-2xl p-6 hover:border-[#C9A84C]/25 transition-all duration-500"><div class="w-11 h-11 bg-[#C9A84C]/[0.08] rounded-xl flex items-center justify-center mb-5"><i data-lucide="users" class="w-5 h-5 text-[#C9A84C]"></i></div><h3 class="text-3xl font-bold text-white mb-1 tracking-tight">500<span class="text-[#C9A84C]">+</span></h3><p class="text-[12px] text-gray-500 font-medium tracking-wide uppercase">Clients Served</p></div>
+   208→   208→                <div class="tilt-card glass-card rounded-2xl p-6 hover:border-[#C9A84C]/25 transition-all duration-500 mt-8"><div class="w-11 h-11 bg-[#C9A84C]/[0.08] rounded-xl flex items-center justify-center mb-5"><i data-lucide="trending-up" class="w-5 h-5 text-[#C9A84C]"></i></div><h3 class="text-3xl font-bold text-white mb-1 tracking-tight">3<span class="text-[#C9A84C]">x</span></h3><p class="text-[12px] text-gray-500 font-medium tracking-wide uppercase">Avg ROI Growth</p></div>
+   209→   209→            </div>
+   210→   210→        </div>
+   211→   211→        <div class="mt-20 pt-8 border-t border-white/[0.04] animate-fade-in-up delay-700" style="opacity:0;animation-fill-mode:forwards">
+   212→   212→            <div class="flex flex-wrap items-center gap-x-8 gap-y-2">
+   213→   213→                <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C9A84C]/60">Serving</span>
+   214→   214→                <div class="flex flex-wrap gap-6 text-[13px] text-gray-600">
+   215→   215→                    <span class="hover:text-[#C9A84C] transition-colors duration-300 cursor-default flex items-center gap-1.5"><span class="w-1 h-1 bg-[#C9A84C]/30 rounded-full"></span>Dubai</span>
+   216→   216→                    <span class="hover:text-[#C9A84C] transition-colors duration-300 cursor-default flex items-center gap-1.5"><span class="w-1 h-1 bg-[#C9A84C]/30 rounded-full"></span>Abu Dhabi</span>
+   217→   217→                    <span class="hover:text-[#C9A84C] transition-colors duration-300 cursor-default flex items-center gap-1.5"><span class="w-1 h-1 bg-[#C9A84C]/30 rounded-full"></span>Sharjah</span>
+   218→   218→                    <span class="hover:text-[#C9A84C] transition-colors duration-300 cursor-default flex items-center gap-1.5"><span class="w-1 h-1 bg-[#C9A84C]/30 rounded-full"></span>Ajman</span>
+   219→   219→                    <span class="hover:text-[#C9A84C] transition-colors duration-300 cursor-default flex items-center gap-1.5"><span class="w-1 h-1 bg-[#C9A84C]/30 rounded-full"></span>Ras Al Khaimah</span>
+   220→   220→                    <span class="hover:text-[#C9A84C] transition-colors duration-300 cursor-default flex items-center gap-1.5"><span class="w-1 h-1 bg-[#C9A84C]/30 rounded-full"></span>Fujairah</span>
+   221→   221→                    <span class="hover:text-[#C9A84C] transition-colors duration-300 cursor-default flex items-center gap-1.5"><span class="w-1 h-1 bg-[#C9A84C]/30 rounded-full"></span>Umm Al Quwain</span>
+   222→   222→                </div>
+   223→   223→            </div>
+   224→   224→        </div>
+   225→   225→    </div>
+   226→   226→</section>
+   227→   227→
+   228→   228→<!-- ═══════════════════════════════════════════════════════════════ -->
+   229→   229→<!-- SERVICES SECTION -->
+   230→   230→<!-- ═══════════════════════════════════════════════════════════════ -->
+   231→   231→<section id="services" class="relative py-28 bg-[#0A0A0A]">
+   232→   232→    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#C9A84C]/[0.02] rounded-full blur-[100px]"></div>
+   233→   233→    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+   234→   234→        <div class="text-center mb-20 reveal">
+   235→   235→            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#C9A84C]/15 bg-[#C9A84C]/[0.03] text-[#C9A84C] text-[10px] font-bold tracking-[0.25em] uppercase mb-6">Our Services</span>
+   236→   236→            <h2 class="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold tracking-tight mb-5">Everything You Need to<br><span class="text-[#C9A84C]">Dominate Digitally</span></h2>
+   237→   237→            <p class="text-[17px] text-gray-500 max-w-2xl mx-auto leading-relaxed">From stunning websites to powerful SEO — high-quality tech solutions that fit your budget and drive real results.</p>
+   238→   238→        </div>
+   239→   239→        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+   240→   240→            <div class="service-card tilt-card group relative bg-[#111]/80 border border-white/[0.04] rounded-2xl p-8 transition-all duration-500 hover:border-[#C9A84C]/25 hover:bg-[#141414] reveal"><div class="service-icon w-14 h-14 bg-[#C9A84C]/[0.06] border border-[#C9A84C]/10 rounded-2xl flex items-center justify-center mb-7 transition-all duration-500 group-hover:bg-[#C9A84C] group-hover:border-[#C9A84C] group-hover:rotate-3"><i data-lucide="globe" class="w-6 h-6 text-[#C9A84C] transition-colors duration-500 group-hover:text-[#0A0A0A]"></i></div><h3 class="text-[17px] font-bold text-white mb-3 tracking-tight">Website Development</h3><p class="text-[14px] text-gray-500 leading-relaxed mb-5">Affordable, responsive websites that convert visitors into customers. Arabic & English support.</p><div class="flex flex-wrap gap-2"><span class="px-2.5 py-1 bg-[#C9A84C]/[0.05] border border-[#C9A84C]/10 rounded-full text-[10px] font-medium text-[#C9A84C] tracking-wide">Landing Pages</span><span class="px-2.5 py-1 bg-[#C9A84C]/[0.05] border border-[#C9A84C]/10 rounded-full text-[10px] font-medium text-[#C9A84C] tracking-wide">Corporate</span><span class="px-2.5 py-1 bg-[#C9A84C]/[0.05] border border-[#C9A84C]/10 rounded-full text-[10px] font-medium text-[#C9A84C] tracking-wide">E-commerce</span></div></div>
+   241→   241→            <div class="service-card tilt-card group relative bg-[#111]/80 border border-white/[0.04] rounded-2xl p-8 transition-all duration-500 hover:border-[#C9A84C]/25 hover:bg-[#141414] reveal"><div class="service-icon w-14 h-14 bg-[#C9A84C]/[0.06] border border-[#C9A84C]/10 rounded-2xl flex items-center justify-center mb-7 transition-all duration-500 group-hover:bg-[#C9A84C] group-hover:border-[#C9A84C] group-hover:-rotate-3"><i data-lucide="code-2" class="w-6 h-6 text-[#C9A84C] transition-colors duration-500 group-hover:text-[#0A0A0A]"></i></div><h3 class="text-[17px] font-bold text-white mb-3 tracking-tight">Custom Web Apps</h3><p class="text-[14px] text-gray-500 leading-relaxed mb-5">Tailored web applications for your unique business needs — from CRM systems to booking platforms.</p><div class="flex flex-wrap gap-2"><span class="px-2.5 py-1 bg-[#C9A84C]/[0.05] border border-[#C9A84C]/10 rounded-full text-[10px] font-medium text-[#C9A84C] tracking-wide">SaaS</span><span class="px-2.5 py-1 bg-[#C9A84C]/[0.05] border border-[#C9A84C]/10 rounded-full text-[10px] font-medium text-[#C9A84C] tracking-wide">Portals</span><span class="px-2.5 py-1 bg-[#C9A84C]/[0.05] border border-[#C9A84C]/10 rounded-full text-[10px] font-medium text-[#C9A84C] tracking-wide">APIs</span></div></div>
+   242→   242→            <div class="service-card tilt-card group relative bg-[#111]/80 border border-white/[0.04] rounded-2xl p-8 transition-all duration-500 hover:border-[#C9A84C]/25 hover:bg-[#141414] reveal"><div class="service-icon w-14 h-14 bg-[#C9A84C]/[0.06] border border-[#C9A84C]/10 rounded-2xl flex items-center justify-center mb-7 transition-all duration-500 group-hover:bg-[#C9A84C] group-hover:border-[#C9A84C] group-hover:rotate-3"><i data-lucide="search" class="w-6 h-6 text-[#C9A84C] transition-colors duration-500 group-hover:text-[#0A0A0A]"></i></div><h3 class="text-[17px] font-bold text-white mb-3 tracking-tight">SEO Campaigns</h3><p class="text-[14px] text-gray-500 leading-relaxed mb-5">Rank higher on Google with SEO built for the UAE market. Bilingual optimization for maximum reach.</p><div class="flex flex-wrap gap-2"><span class="px-2.5 py-1 bg-[#C9A84C]/[0.05] border border-[#C9A84C]/10 rounded-full text-[10px] font-medium text-[#C9A84C] tracking-wide">Local SEO</span><span class="px-2.5 py-1 bg-[#C9A84C]/[0.05] border border-[#C9A84C]/10 rounded-full text-[10px] font-medium text-[#C9A84C] tracking-wide">Arabic SEO</span><span class="px-2.5 py-1 bg-[#C9A84C]/[0.05] border border-[#C9A84C]/10 rounded-full text-[10px] font-medium text-[#C9A84C] tracking-wide">Technical</span></div></div>
+   243→   243→            <div class="service-card tilt-card group relative bg-[#111]/80 border border-white/[0.04] rounded-2xl p-8 transition-all duration-500 hover:border-[#C9A84C]/25 hover:bg-[#141414] reveal"><div class="service-icon w-14 h-14 bg-[#C9A84C]/[0.06] border border-[#C9A84C]/10 rounded-2xl flex items-center justify-center mb-7 transition-all duration-500 group-hover:bg-[#C9A84C] group-hover:border-[#C9A84C] group-hover:-rotate-3"><i data-lucide="megaphone" class="w-6 h-6 text-[#C9A84C] transition-colors duration-500 group-hover:text-[#0A0A0A]"></i></div><h3 class="text-[17px] font-bold text-white mb-3 tracking-tight">Digital Marketing</h3><p class="text-[14px] text-gray-500 leading-relaxed mb-5">Data-driven campaigns across Google Ads, social media, and email that deliver measurable ROI fast.</p><div class="flex flex-wrap gap-2"><span class="px-2.5 py-1 bg-[#C9A84C]/[0.05] border border-[#C9A84C]/10 rounded-full text-[10px] font-medium text-[#C9A84C] tracking-wide">Google Ads</span><span class="px-2.5 py-1 bg-[#C9A84C]/[0.05] border border-[#C9A84C]/10 rounded-full text-[10px] font-medium text-[#C9A84C] tracking-wide">Social Media</span><span class="px-2.5 py-1 bg-[#C9A84C]/[0.05] border border-[#C9A84C]/10 rounded-full text-[10px] font-medium text-[#C9A84C] tracking-wide">Email</span></div></div>
+   244→   244→            <div class="service-card tilt-card group relative bg-[#111]/80 border border-white/[0.04] rounded-2xl p-8 transition-all duration-500 hover:border-[#C9A84C]/25 hover:bg-[#141414] reveal"><div class="service-icon w-14 h-14 bg-[#C9A84C]/[0.06] border border-[#C9A84C]/10 rounded-2xl flex items-center justify-center mb-7 transition-all duration-500 group-hover:bg-[#C9A84C] group-hover:border-[#C9A84C] group-hover:rotate-3"><i data-lucide="smartphone" class="w-6 h-6 text-[#C9A84C] transition-colors duration-500 group-hover:text-[#0A0A0A]"></i></div><h3 class="text-[17px] font-bold text-white mb-3 tracking-tight">Mobile-First Design</h3><p class="text-[14px] text-gray-500 leading-relaxed mb-5">With 80%+ UAE users on mobile, we build everything mobile-first for maximum engagement.</p><div class="flex flex-wrap gap-2"><span class="px-2.5 py-1 bg-[#C9A84C]/[0.05] border border-[#C9A84C]/10 rounded-full text-[10px] font-medium text-[#C9A84C] tracking-wide">Responsive</span><span class="px-2.5 py-1 bg-[#C9A84C]/[0.05] border border-[#C9A84C]/10 rounded-full text-[10px] font-medium text-[#C9A84C] tracking-wide">PWA</span><span class="px-2.5 py-1 bg-[#C9A84C]/[0.05] border border-[#C9A84C]/10 rounded-full text-[10px] font-medium text-[#C9A84C] tracking-wide">UI/UX</span></div></div>
+   245→   245→            <div class="service-card tilt-card group relative bg-[#111]/80 border border-white/[0.04] rounded-2xl p-8 transition-all duration-500 hover:border-[#C9A84C]/25 hover:bg-[#141414] reveal"><div class="service-icon w-14 h-14 bg-[#C9A84C]/[0.06] border border-[#C9A84C]/10 rounded-2xl flex items-center justify-center mb-7 transition-all duration-500 group-hover:bg-[#C9A84C] group-hover:border-[#C9A84C] group-hover:-rotate-3"><i data-lucide="bar-chart-3" class="w-6 h-6 text-[#C9A84C] transition-colors duration-500 group-hover:text-[#0A0A0A]"></i></div><h3 class="text-[17px] font-bold text-white mb-3 tracking-tight">Analytics & Reporting</h3><p class="text-[14px] text-gray-500 leading-relaxed mb-5">Clear dashboards you actually understand. Track every metric that matters for your growth.</p><div class="flex flex-wrap gap-2"><span class="px-2.5 py-1 bg-[#C9A84C]/[0.05] border border-[#C9A84C]/10 rounded-full text-[10px] font-medium text-[#C9A84C] tracking-wide">Analytics</span><span class="px-2.5 py-1 bg-[#C9A84C]/[0.05] border border-[#C9A84C]/10 rounded-full text-[10px] font-medium text-[#C9A84C] tracking-wide">Reports</span><span class="px-2.5 py-1 bg-[#C9A84C]/[0.05] border border-[#C9A84C]/10 rounded-full text-[10px] font-medium text-[#C9A84C] tracking-wide">KPIs</span></div></div>
+   246→   246→        </div>
+   247→   247→    </div>
+   248→   248→</section>
+   249→   249→
+   250→   250→<!-- ═══════════════════════════════════════════════════════════════ -->
+   251→   251→<!-- WHY US SECTION -->
+   252→   252→<!-- ═══════════════════════════════════════════════════════════════ -->
+   253→   253→<section id="why-us" class="relative py-28 bg-[#0D0D0D]">
+   254→   254→    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+   255→   255→        <div class="grid lg:grid-cols-2 gap-16 items-center">
+   256→   256→            <div class="reveal">
+   257→   257→                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#C9A84C]/15 bg-[#C9A84C]/[0.03] text-[#C9A84C] text-[10px] font-bold tracking-[0.25em] uppercase mb-6">Why MN Sofan</span>
+   258→   258→                <h2 class="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold tracking-tight mb-7 leading-[1.1]">Real Results,<br><span class="text-[#C9A84C]">Without Breaking<br>the Bank</span></h2>
+   259→   259→                <p class="text-[17px] text-gray-500 leading-relaxed mb-10">We combine premium quality with affordable pricing. Every project complies with UAE regulations while attracting both local Arab and international clients.</p>
+   260→   260→                <div class="space-y-7">
+   261→   261→                    <div class="flex items-start gap-4 group cursor-default"><div class="flex-shrink-0 w-12 h-12 bg-[#C9A84C]/[0.06] border border-[#C9A84C]/10 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:bg-[#C9A84C] group-hover:border-[#C9A84C]"><i data-lucide="timer" class="w-5 h-5 text-[#C9A84C] transition-colors duration-500 group-hover:text-[#0A0A0A]"></i></div><div><h4 class="text-[15px] font-bold text-white mb-1.5">Guaranteed Fast Delivery</h4><p class="text-[14px] text-gray-500 leading-relaxed">Most projects delivered in 48 hours to 2 weeks. No endless waiting.</p></div></div>
+   262→   262→                    <div class="flex items-start gap-4 group cursor-default"><div class="flex-shrink-0 w-12 h-12 bg-[#C9A84C]/[0.06] border border-[#C9A84C]/10 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:bg-[#C9A84C] group-hover:border-[#C9A84C]"><i data-lucide="wallet" class="w-5 h-5 text-[#C9A84C] transition-colors duration-500 group-hover:text-[#0A0A0A]"></i></div><div><h4 class="text-[15px] font-bold text-white mb-1.5">Flexible Budget Options</h4><p class="text-[14px] text-gray-500 leading-relaxed">Solutions that match your budget — from startups to enterprise-level projects.</p></div></div>
+   263→   263→                    <div class="flex items-start gap-4 group cursor-default"><div class="flex-shrink-0 w-12 h-12 bg-[#C9A84C]/[0.06] border border-[#C9A84C]/10 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:bg-[#C9A84C] group-hover:border-[#C9A84C]"><i data-lucide="languages" class="w-5 h-5 text-[#C9A84C] transition-colors duration-500 group-hover:text-[#0A0A0A]"></i></div><div><h4 class="text-[15px] font-bold text-white mb-1.5">Bilingual Expertise</h4><p class="text-[14px] text-gray-500 leading-relaxed">Arabic & English content that resonates with both local and international audiences.</p></div></div>
+   264→   264→                    <div class="flex items-start gap-4 group cursor-default"><div class="flex-shrink-0 w-12 h-12 bg-[#C9A84C]/[0.06] border border-[#C9A84C]/10 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:bg-[#C9A84C] group-hover:border-[#C9A84C]"><i data-lucide="scale" class="w-5 h-5 text-[#C9A84C] transition-colors duration-500 group-hover:text-[#0A0A0A]"></i></div><div><h4 class="text-[15px] font-bold text-white mb-1.5">UAE Regulatory Compliance</h4><p class="text-[14px] text-gray-500 leading-relaxed">Every project fully complies with UAE regulations and business standards.</p></div></div>
+   265→   265→                </div>
+   266→   266→            </div>
+   267→   267→            <div class="relative reveal">
+   268→   268→                <div class="rounded-3xl overflow-hidden group"><img src="https://picsum.photos/seed/uae-business-modern/700/850.jpg" alt="Business Development" class="w-full h-[500px] lg:h-[620px] object-cover transition-transform duration-[1200ms] group-hover:scale-105"><div class="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-[#0D0D0D]/20 to-transparent"></div></div>
+   269→   269→                <div class="absolute bottom-8 left-8 right-8 bg-[#0A0A0A]/90 backdrop-blur-xl border border-[#C9A84C]/15 rounded-2xl p-5 transform hover:-translate-y-1 transition-all duration-300">
+   270→   270→                    <div class="flex items-center gap-4">
+   271→   271→                        <div class="logo-circle w-11 h-11 border-2 border-[#C9A84C]/30 flex-shrink-0 bg-[#0A0A0A]"><img src="https://z-cdn-media.chatglm.cn/files/2708862f-1650-43ba-8f61-1600c11c6525.png?auth_key=1883212066-e3f2fcfccb4f46f4838fc8a470a3cbd9-0-37f6e50c8a96c36397bd04e3218cf5c8" alt="" class="logo-img"></div>
+   272→   272→                        <div><div class="flex items-center gap-0.5 mb-1"><i data-lucide="star" class="w-3.5 h-3.5 text-[#C9A84C] fill-[#C9A84C]"></i><i data-lucide="star" class="w-3.5 h-3.5 text-[#C9A84C] fill-[#C9A84C]"></i><i data-lucide="star" class="w-3.5 h-3.5 text-[#C9A84C] fill-[#C9A84C]"></i><i data-lucide="star" class="w-3.5 h-3.5 text-[#C9A84C] fill-[#C9A84C]"></i><i data-lucide="star" class="w-3.5 h-3.5 text-[#C9A84C] fill-[#C9A84C]"></i><span class="text-[12px] text-gray-400 ml-2">5.0 / 5.0</span></div><p class="text-[12px] text-gray-500">Trusted by 500+ businesses across UAE</p></div>
+   273→   273→                    </div>
+   274→   274→                </div>
+   275→   275→            </div>
+   276→   276→        </div>
+   277→   277→    </div>
+   278→   278→</section>
+   279→   279→
+   280→   280→<!-- ═══════════════════════════════════════════════════════════════ -->
+   281→   281→<!-- LOCATIONS & MAP SECTION -->
+   282→   282→<!-- ═══════════════════════════════════════════════════════════════ -->
+   283→   283→<section id="locations" class="relative py-28 bg-[#0A0A0A]">
+   284→   284→    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+   285→   285→        <div class="text-center mb-20 reveal">
+   286→   286→            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#C9A84C]/15 bg-[#C9A84C]/[0.03] text-[#C9A84C] text-[10px] font-bold tracking-[0.25em] uppercase mb-6">Our Reach</span>
+   287→   287→            <h2 class="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold tracking-tight mb-5">Serving All <span class="text-[#C9A84C]">Seven Emirates</span></h2>
+   288→   288→            <p class="text-[17px] text-gray-500 max-w-2xl mx-auto leading-relaxed">From the towers of Dubai to the shores of Fujairah — premium tech solutions wherever your business operates.</p>
+   289→   289→        </div>
+   290→   290→        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
+   291→   291→            <div class="tilt-card group relative rounded-3xl overflow-hidden h-80 reveal cursor-default"><img src="https://picsum.photos/seed/dubai-night-skyline/600/500.jpg" alt="Dubai" class="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"><div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/30 to-transparent"></div><div class="absolute bottom-6 left-7 right-7"><div class="flex items-center gap-2 mb-2"><span class="w-2 h-2 bg-[#C9A84C] rounded-full"></span><span class="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C9A84C]">Main Hub</span></div><h3 class="font-display text-2xl font-bold text-white">Dubai</h3><p class="text-[13px] text-gray-400 mt-1">Fastest delivery • Full service</p></div></div>
+   292→   292→            <div class="tilt-card group relative rounded-3xl overflow-hidden h-80 reveal cursor-default"><img src="https://picsum.photos/seed/abu-dhabi-grand/600/500.jpg" alt="Abu Dhabi" class="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"><div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0D]/30 to-transparent"></div><div class="absolute bottom-6 left-7 right-7"><div class="flex items-center gap-2 mb-2"><span class="w-2 h-2 bg-[#C9A84C] rounded-full"></span><span class="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C9A84C]">Capital Region</span></div><h3 class="font-display text-2xl font-bold text-white">Abu Dhabi</h3><p class="text-[13px] text-gray-400 mt-1">Enterprise solutions</p></div></div>
+   293→   293→            <div class="tilt-card group relative rounded-3xl overflow-hidden h-80 reveal cursor-default"><img src="https://picsum.photos/seed/uae-modern-city/600/500.jpg" alt="All Emirates" class="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"><div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/30 to-transparent"></div><div class="absolute bottom-6 left-7 right-7"><div class="flex items-center gap-2 mb-2"><span class="w-2 h-2 bg-[#C9A84C] rounded-full"></span><span class="text-[10px] font-bold tracking-[0.2em] uppercase text-[#C9A84C]">Nationwide</span></div><h3 class="font-display text-2xl font-bold text-white">All Emirates</h3><p class="text-[13px] text-gray-400 mt-1">Sharjah • Ajman • RAK • Fujairah • UAQ</p></div></div>
+   294→   294→        </div>
+   295→   295→        <!-- Google Map -->
+   296→   296→        <div class="reveal">
+   297→   297→            <div class="relative rounded-3xl overflow-hidden border border-white/[0.04] group">
+   298→   298→                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d943.6869481667212!2d55.33252814533766!3d25.276532700326218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c956c599479%3A0xcdb0cdf53b3ac84d!2sHor%20Al%20Anz%20-%20Deira%20-%20Dubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2seg!4v1783213092531!5m2!1sen!2seg" width="100%" height="400" style="border:0; filter: invert(90%) hue-rotate(180deg) brightness(0.9) contrast(1.1) saturate(0.3);" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+   299→   299→                <div class="absolute bottom-6 left-6 bg-[#0A0A0A]/90 backdrop-blur-xl border border-[#C9A84C]/15 rounded-2xl p-5 max-w-xs group-hover:translate-y-0 translate-y-2 transition-all duration-500">
+   300→   300→                    <div class="flex items-center gap-3 mb-3">
+   301→   301→                        <div class="logo-circle w-9 h-9 border border-[#C9A84C]/30 flex-shrink-0 bg-[#0A0A0A]"><img src="https://z-cdn-media.chatglm.cn/files/2708862f-1650-43ba-8f61-1600c11c6525.png?auth_key=1883212066-e3f2fcfccb4f46f4838fc8a470a3cbd9-0-37f6e50c8a96c36397bd04e3218cf5c8" alt="" class="logo-img"></div>
+   302→   302→                        <div><h4 class="text-[13px] font-bold text-white">MN Sofan HQ</h4><p class="text-[10px] text-[#C9A84C] font-medium tracking-wide">Business Development Services</p></div>
+   303→   303→                    </div>
+   304→   304→                    <div class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-[#C9A84C]/60 flex-shrink-0 mt-0.5"></i><p class="text-[12px] text-gray-400 leading-relaxed">Hor Al Anz - Deira - Dubai<br>United Arab Emirates</p></div>
+   305→   305→                </div>
+   306→   306→            </div>
+   307→   307→        </div>
+   308→   308→    </div>
+   309→   309→</section>
+   310→   310→
+   311→   311→<!-- ═══════════════════════════════════════════════════════════════ -->
+   312→   312→<!-- PROCESS SECTION -->
+   313→   313→<!-- ═══════════════════════════════════════════════════════════════ -->
+   314→   314→<section id="process" class="relative py-28 bg-[#0D0D0D]">
+   315→   315→    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(201,168,76,0.015)_0%,transparent_50%)]"></div>
+   316→   316→    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+   317→   317→        <div class="text-center mb-20 reveal"><span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#C9A84C]/15 bg-[#C9A84C]/[0.03] text-[#C9A84C] text-[10px] font-bold tracking-[0.25em] uppercase mb-6">How It Works</span><h2 class="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold tracking-tight mb-5">From Idea to Launch<br><span class="text-[#C9A84C]">in 4 Simple Steps</span></h2></div>
+   318→   318→        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+   319→   319→            <div class="relative text-center reveal group cursor-default"><div class="w-20 h-20 mx-auto bg-[#C9A84C]/[0.04] border border-[#C9A84C]/15 rounded-2xl flex items-center justify-center mb-7 transition-all duration-500 group-hover:bg-[#C9A84C]/10 group-hover:border-[#C9A84C]/30 group-hover:-translate-y-1"><span class="text-[#C9A84C] font-display text-3xl font-bold group-hover:scale-110 transition-transform duration-300">01</span></div><h3 class="text-[16px] font-bold text-white mb-2.5">Free Consultation</h3><p class="text-[14px] text-gray-500 leading-relaxed">Tell us your vision via our AI agent. We'll assess your needs instantly.</p><div class="hidden lg:block absolute top-10 left-[55%] w-[90%] border-t border-dashed border-[#C9A84C]/10"></div></div>
+   320→   320→            <div class="relative text-center reveal group cursor-default"><div class="w-20 h-20 mx-auto bg-[#C9A84C]/[0.04] border border-[#C9A84C]/15 rounded-2xl flex items-center justify-center mb-7 transition-all duration-500 group-hover:bg-[#C9A84C]/10 group-hover:border-[#C9A84C]/30 group-hover:-translate-y-1"><span class="text-[#C9A84C] font-display text-3xl font-bold group-hover:scale-110 transition-transform duration-300">02</span></div><h3 class="text-[16px] font-bold text-white mb-2.5">Custom Proposal</h3><p class="text-[14px] text-gray-500 leading-relaxed">Receive a detailed plan with timeline, deliverables, and flexible pricing.</p><div class="hidden lg:block absolute top-10 left-[55%] w-[90%] border-t border-dashed border-[#C9A84C]/10"></div></div>
+   321→   321→            <div class="relative text-center reveal group cursor-default"><div class="w-20 h-20 mx-auto bg-[#C9A84C]/[0.04] border border-[#C9A84C]/15 rounded-2xl flex items-center justify-center mb-7 transition-all duration-500 group-hover:bg-[#C9A84C]/10 group-hover:border-[#C9A84C]/30 group-hover:-translate-y-1"><span class="text-[#C9A84C] font-display text-3xl font-bold group-hover:scale-110 transition-transform duration-300">03</span></div><h3 class="text-[16px] font-bold text-white mb-2.5">Build & Review</h3><p class="text-[14px] text-gray-500 leading-relaxed">We develop your project with regular check-ins so you stay in control.</p><div class="hidden lg:block absolute top-10 left-[55%] w-[90%] border-t border-dashed border-[#C9A84C]/10"></div></div>
+   322→   322→            <div class="text-center reveal group cursor-default"><div class="w-20 h-20 mx-auto bg-[#C9A84C]/[0.04] border border-[#C9A84C]/15 rounded-2xl flex items-center justify-center mb-7 transition-all duration-500 group-hover:bg-[#C9A84C]/10 group-hover:border-[#C9A84C]/30 group-hover:-translate-y-1"><span class="text-[#C9A84C] font-display text-3xl font-bold group-hover:scale-110 transition-transform duration-300">04</span></div><h3 class="text-[16px] font-bold text-white mb-2.5">Launch & Grow</h3><p class="text-[14px] text-gray-500 leading-relaxed">Go live with full setup and ongoing support to scale your business.</p></div>
+   323→   323→        </div>
+   324→   324→    </div>
+   325→   325→</section>
+   326→   326→
+   327→   327→<!-- ═══════════════════════════════════════════════════════════════ -->
+   328→   328→<!-- CONTACT SECTION -->
+   329→   329→<!-- ═══════════════════════════════════════════════════════════════ -->
+   330→   330→<section id="contact" class="relative py-28 bg-[#0A0A0A]">
+   331→   331→    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(201,168,76,0.03)_0%,transparent_60%)]"></div>
+   332→   332→    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+   333→   333→        <div class="text-center mb-20 reveal"><span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#C9A84C]/15 bg-[#C9A84C]/[0.03] text-[#C9A84C] text-[10px] font-bold tracking-[0.25em] uppercase mb-6">Get Started</span><h2 class="font-display text-[clamp(2rem,4vw,3.5rem)] font-bold tracking-tight mb-5">Let's Build Something<br><span class="text-[#C9A84C]">Extraordinary</span></h2><p class="text-[17px] text-gray-500 max-w-2xl mx-auto leading-relaxed">Fill out the form or chat with our AI agent — available 24/7 to help you get started.</p></div>
+   334→   334→        <div class="grid lg:grid-cols-5 gap-12">
+   335→   335→            <div class="lg:col-span-3 reveal">
+   336→   336→                <form id="contactForm" class="space-y-6">
+   337→   337→                    <div class="grid sm:grid-cols-2 gap-5">
+   338→   338→                        <div class="group"><label class="block text-[11px] font-bold tracking-[0.15em] uppercase text-gray-500 mb-2.5 group-focus-within:text-[#C9A84C] transition-colors">Full Name *</label><input type="text" name="name" required class="w-full px-4 py-3.5 bg-[#111]/80 border border-white/[0.06] rounded-xl text-[14px] text-white placeholder-gray-700 focus:outline-none focus:border-[#C9A84C]/30 focus:bg-[#141414] transition-all duration-300" placeholder="Your name"></div>
+   339→   339→                        <div class="group"><label class="block text-[11px] font-bold tracking-[0.15em] uppercase text-gray-500 mb-2.5 group-focus-within:text-[#C9A84C] transition-colors">Email *</label><input type="email" name="email" required class="w-full px-4 py-3.5 bg-[#111]/80 border border-white/[0.06] rounded-xl text-[14px] text-white placeholder-gray-700 focus:outline-none focus:border-[#C9A84C]/30 focus:bg-[#141414] transition-all duration-300" placeholder="your@email.com"></div>
+   340→   340→                    </div>
+   341→   341→                    <div class="grid sm:grid-cols-2 gap-5">
+   342→   342→                        <div class="group"><label class="block text-[11px] font-bold tracking-[0.15em] uppercase text-gray-500 mb-2.5 group-focus-within:text-[#C9A84C] transition-colors">Phone / WhatsApp</label><input type="tel" name="phone" class="w-full px-4 py-3.5 bg-[#111]/80 border border-white/[0.06] rounded-xl text-[14px] text-white placeholder-gray-700 focus:outline-none focus:border-[#C9A84C]/30 focus:bg-[#141414] transition-all duration-300" placeholder="+971 XX XXX XXXX"></div>
+   343→   343→                        <div class="group"><label class="block text-[11px] font-bold tracking-[0.15em] uppercase text-gray-500 mb-2.5 group-focus-within:text-[#C9A84C] transition-colors">Service</label><select name="service" class="w-full px-4 py-3.5 bg-[#111]/80 border border-white/[0.06] rounded-xl text-[14px] text-white focus:outline-none focus:border-[#C9A84C]/30 transition-all duration-300 appearance-none" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23C9A84C%22 stroke-width=%222%22><polyline points=%226 9 12 15 18 9%22/></svg>');background-repeat:no-repeat;background-position:right 16px center;"><option value="" class="bg-[#0A0A0A]">Select a service</option><option value="website" class="bg-[#0A0A0A]">Website Development</option><option value="webapp" class="bg-[#0A0A0A]">Custom Web App</option><option value="seo" class="bg-[#0A0A0A]">SEO Campaign</option><option value="marketing" class="bg-[#0A0A0A]">Digital Marketing</option><option value="other" class="bg-[#0A0A0A]">Other</option></select></div>
+   344→   344→                    </div>
+   345→   345→                    <div class="group"><label class="block text-[11px] font-bold tracking-[0.15em] uppercase text-gray-500 mb-2.5 group-focus-within:text-[#C9A84C] transition-colors">Project Details *</label><textarea name="message" required rows="4" class="w-full px-4 py-3.5 bg-[#111]/80 border border-white/[0.06] rounded-xl text-[14px] text-white placeholder-gray-700 focus:outline-none focus:border-[#C9A84C]/30 focus:bg-[#141414] transition-all duration-300 resize-none" placeholder="Describe your project, goals, and timeline..."></textarea></div>
+   346→   346→                    <div><label class="block text-[11px] font-bold tracking-[0.15em] uppercase text-gray-500 mb-3">Budget Range</label><div class="flex flex-wrap gap-3"><label class="budget-option px-5 py-2.5 border border-white/[0.06] rounded-full text-[13px] text-gray-500 cursor-pointer hover:border-[#C9A84C]/20 hover:text-[#C9A84C] transition-all duration-300 has-[:checked]:bg-[#C9A84C]/10 has-[:checked]:border-[#C9A84C]/40 has-[:checked]:text-[#C9A84C]"><input type="radio" name="budget" value="5k-15k" class="hidden"> AED 5K–15K</label><label class="budget-option px-5 py-2.5 border border-white/[0.06] rounded-full text-[13px] text-gray-500 cursor-pointer hover:border-[#C9A84C]/20 hover:text-[#C9A84C] transition-all duration-300 has-[:checked]:bg-[#C9A84C]/10 has-[:checked]:border-[#C9A84C]/40 has-[:checked]:text-[#C9A84C]"><input type="radio" name="budget" value="15k-50k" class="hidden"> AED 15K–50K</label><label class="budget-option px-5 py-2.5 border border-white/[0.06] rounded-full text-[13px] text-gray-500 cursor-pointer hover:border-[#C9A84C]/20 hover:text-[#C9A84C] transition-all duration-300 has-[:checked]:bg-[#C9A84C]/10 has-[:checked]:border-[#C9A84C]/40 has-[:checked]:text-[#C9A84C]"><input type="radio" name="budget" value="50k+" class="hidden"> AED 50K+</label><label class="budget-option px-5 py-2.5 border border-white/[0.06] rounded-full text-[13px] text-gray-500 cursor-pointer hover:border-[#C9A84C]/20 hover:text-[#C9A84C] transition-all duration-300 has-[:checked]:bg-[#C9A84C]/10 has-[:checked]:border-[#C9A84C]/40 has-[:checked]:text-[#C9A84C]"><input type="radio" name="budget" value="flexible" class="hidden"> Flexible</label></div></div>
+   347→   347→                    <button type="submit" class="magnetic-btn group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-10 py-4 bg-[#C9A84C] text-[#0A0A0A] font-bold text-[14px] rounded-full hover:bg-[#E2CC7E] transition-all duration-300 shadow-[0_0_30px_rgba(201,168,76,0.15)] hover:shadow-[0_0_40px_rgba(201,168,76,0.25)]">Submit Inquiry <i data-lucide="send" class="w-[18px] h-[18px] group-hover:translate-x-1 transition-transform duration-300"></i></button>
+   348→   348→                </form>
+   349→   349→                <div id="formSuccess" class="hidden mt-8 p-5 bg-emerald-500/[0.08] border border-emerald-500/20 rounded-2xl text-emerald-400 text-center"><i data-lucide="check-circle" class="w-6 h-6 inline-block mb-2"></i><p class="font-semibold text-[15px]">Thank you! We'll get back to you within 2 hours.</p><p class="text-[13px] text-emerald-400/60 mt-1">Our AI agent will follow up with you shortly.</p></div>
+   350→   350→            </div>
+   351→   351→            <div class="lg:col-span-2 space-y-4 reveal">
+   352→   352→                <div class="tilt-card group bg-[#111]/80 border border-white/[0.04] rounded-2xl p-6 transition-all duration-500 hover:border-[#C9A84C]/20"><div class="flex items-center gap-4 mb-4"><div class="w-11 h-11 bg-[#C9A84C]/[0.06] border border-[#C9A84C]/10 rounded-xl flex items-center justify-center transition-all duration-500 group-hover:bg-[#C9A84C]"><i data-lucide="bot" class="w-5 h-5 text-[#C9A84C] transition-colors duration-500 group-hover:text-[#0A0A0A]"></i></div><div><h4 class="text-[14px] font-bold text-white">AI Chat Agent</h4><p class="text-[12px] text-gray-500">24/7 smart assistance</p></div></div><button onclick="toggleChat()" class="block w-full text-center px-5 py-3 bg-[#C9A84C]/[0.06] border border-[#C9A84C]/15 text-[#C9A84C] font-semibold text-[13px] rounded-xl hover:bg-[#C9A84C]/15 hover:border-[#C9A84C]/25 transition-all duration-300"><i data-lucide="message-circle" class="w-4 h-4 inline -mt-0.5"></i> Talk to AI Agent</button></div>
+   353→   353→                <div class="tilt-card group bg-[#111]/80 border border-white/[0.04] rounded-2xl p-6 transition-all duration-500 hover:border-emerald-500/20"><div class="flex items-center gap-4 mb-4"><div class="w-11 h-11 bg-emerald-500/[0.06] border border-emerald-500/10 rounded-xl flex items-center justify-center transition-all duration-500 group-hover:bg-emerald-500"><svg class="w-5 h-5 text-emerald-400 transition-colors duration-500 group-hover:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><div><h4 class="text-[14px] font-bold text-white">WhatsApp</h4><p class="text-[12px] text-gray-500">Via AutoClaw Agent</p></div></div><button onclick="sendQuickMessage('Connect me to WhatsApp')" class="block w-full text-center px-5 py-3 bg-emerald-500/[0.06] border border-emerald-500/15 text-emerald-400 font-semibold text-[13px] rounded-xl hover:bg-emerald-500/15 hover:border-emerald-500/25 transition-all duration-300">Connect via Agent</button></div>
+   354→   354→                <div class="tilt-card group bg-[#111]/80 border border-white/[0.04] rounded-2xl p-6 transition-all duration-500 hover:border-blue-500/20"><div class="flex items-center gap-4 mb-4"><div class="w-11 h-11 bg-blue-500/[0.06] border border-blue-500/10 rounded-xl flex items-center justify-center transition-all duration-500 group-hover:bg-blue-500"><i data-lucide="mail" class="w-5 h-5 text-blue-400 transition-colors duration-500 group-hover:text-white"></i></div><div><h4 class="text-[14px] font-bold text-white">Email</h4><p class="text-[12px] text-gray-500">info@mnsofan.com</p></div></div><a href="mailto:info@mnsofan.com" class="block w-full text-center px-5 py-3 bg-blue-500/[0.06] border border-blue-500/15 text-blue-400 font-semibold text-[13px] rounded-xl hover:bg-blue-500/15 transition-all duration-300">Send Email</a></div>
+   355→   355→                <div class="tilt-card bg-[#111]/80 border border-white/[0.04] rounded-2xl p-6"><div class="flex items-center gap-4"><div class="w-11 h-11 bg-purple-500/[0.06] border border-purple-500/10 rounded-xl flex items-center justify-center"><i data-lucide="clock" class="w-5 h-5 text-purple-400"></i></div><div><h4 class="text-[14px] font-bold text-white">Working Hours</h4><p class="text-[12px] text-gray-500">Sun–Thu: 9AM–6PM (GST)</p><p class="text-[10px] text-[#C9A84C] mt-0.5 font-medium tracking-wide">AI Agent available 24/7</p></div></div></div>
+   356→   356→                <div class="tilt-card bg-[#111]/80 border border-white/[0.04] rounded-2xl p-6"><div class="flex items-center gap-4"><div class="w-11 h-11 bg-rose-500/[0.06] border border-rose-500/10 rounded-xl flex items-center justify-center"><i data-lucide="map-pin" class="w-5 h-5 text-rose-400"></i></div><div><h4 class="text-[14px] font-bold text-white">Our Office</h4><p class="text-[12px] text-gray-500">Hor Al Anz - Deira - Dubai, UAE</p></div></div></div>
+   357→   357→            </div>
+   358→   358→        </div>
+   359→   359→    </div>
+   360→   360→</section>
+   361→   361→
+   362→   362→<!-- ═══════════════════════════════════════════════════════════════ -->
+   363→   363→<!-- FOOTER -->
+   364→   364→<!-- ═══════════════════════════════════════════════════════════════ -->
+   365→   365→<footer class="relative bg-[#0A0A0A] pt-20 pb-10 border-t border-white/[0.03]">
+   366→   366→    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,168,76,0.03)_0%,transparent_60%)]"></div>
+   367→   367→    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+   368→   368→        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+   369→   369→            <div><div class="flex items-center gap-3 mb-6"><div class="logo-circle w-11 h-11 border-2 border-[#C9A84C]/30 bg-[#0A0A0A]"><img src="https://z-cdn-media.chatglm.cn/files/2708862f-1650-43ba-8f61-1600c11c6525.png?auth_key=1883212066-e3f2fcfccb4f46f4838fc8a470a3cbd9-0-37f6e50c8a96c36397bd04e3218cf5c8" alt="" class="logo-img"></div><div><span class="block text-[13px] font-bold tracking-[0.15em] text-white">MN SOFAN</span><span class="block text-[8px] font-semibold tracking-[0.3em] text-[#C9A84C]/50 uppercase">Business Development</span></div></div><p class="text-[13px] text-gray-500 leading-relaxed">Premium tech development and digital marketing across the UAE. Fast delivery, affordable pricing, real results.</p></div>
+   370→   370→            <div><h4 class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#C9A84C] mb-6">Services</h4><ul class="space-y-3 text-[13px] text-gray-500"><li><a href="#services" class="hover:text-[#C9A84C] hover:pl-2 transition-all duration-300 inline-block">Website Development</a></li><li><a href="#services" class="hover:text-[#C9A84C] hover:pl-2 transition-all duration-300 inline-block">Custom Web Apps</a></li><li><a href="#services" class="hover:text-[#C9A84C] hover:pl-2 transition-all duration-300 inline-block">SEO Campaigns</a></li><li><a href="#services" class="hover:text-[#C9A84C] hover:pl-2 transition-all duration-300 inline-block">Digital Marketing</a></li><li><a href="#services" class="hover:text-[#C9A84C] hover:pl-2 transition-all duration-300 inline-block">Mobile-First Design</a></li></ul></div>
+   371→   371→            <div><h4 class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#C9A84C] mb-6">Locations</h4><ul class="space-y-3 text-[13px] text-gray-500"><li class="flex items-center gap-2"><span class="w-1 h-1 bg-[#C9A84C]/40 rounded-full"></span>Dubai <span class="text-[10px] text-[#C9A84C]/50">(HQ)</span></li><li class="flex items-center gap-2"><span class="w-1 h-1 bg-[#C9A84C]/40 rounded-full"></span>Abu Dhabi</li><li class="flex items-center gap-2"><span class="w-1 h-1 bg-[#C9A84C]/40 rounded-full"></span>Sharjah</li><li class="flex items-center gap-2"><span class="w-1 h-1 bg-[#C9A84C]/40 rounded-full"></span>Ajman</li><li class="flex items-center gap-2"><span class="w-1 h-1 bg-[#C9A84C]/40 rounded-full"></span>Ras Al Khaimah</li><li class="flex items-center gap-2"><span class="w-1 h-1 bg-[#C9A84C]/40 rounded-full"></span>Fujairah & UAQ</li></ul></div>
+   372→   372→            <div><h4 class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#C9A84C] mb-6">Connect</h4><ul class="space-y-3 text-[13px] text-gray-500 mb-6"><li class="flex items-center gap-2.5"><i data-lucide="phone" class="w-4 h-4 text-[#C9A84C]/40"></i>+971 55 207 9989</li><li class="flex items-center gap-2.5"><i data-lucide="mail" class="w-4 h-4 text-[#C9A84C]/40"></i>info@mnsofan.com</li><li class="flex items-start gap-2.5"><i data-lucide="map-pin" class="w-4 h-4 text-[#C9A84C]/40 flex-shrink-0 mt-0.5"></i>Hor Al Anz - Deira<br>Dubai, UAE</li></ul><div class="flex gap-3"><a href="#" class="social-icon w-9 h-9 bg-white/[0.03] border border-white/[0.06] rounded-lg flex items-center justify-center hover:border-[#C9A84C]/40 hover:text-[#C9A84C] transition-all duration-300 text-gray-500 hover:translate-y-[-2px]"><i data-lucide="linkedin" class="w-4 h-4"></i></a><a href="#" class="social-icon w-9 h-9 bg-white/[0.03] border border-white/[0.06] rounded-lg flex items-center justify-center hover:border-[#C9A84C]/40 hover:text-[#C9A84C] transition-all duration-300 text-gray-500 hover:translate-y-[-2px]"><i data-lucide="instagram" class="w-4 h-4"></i></a><a href="#" class="social-icon w-9 h-9 bg-white/[0.03] border border-white/[0.06] rounded-lg flex items-center justify-center hover:border-[#C9A84C]/40 hover:text-[#C9A84C] transition-all duration-300 text-gray-500 hover:translate-y-[-2px]"><i data-lucide="facebook" class="w-4 h-4"></i></a></div></div>
+   373→   373→        </div>
+   374→   374→        <div class="pt-8 border-t border-white/[0.03] flex flex-col sm:flex-row justify-between items-center gap-4"><p class="text-[11px] text-gray-600">&copy; 2025 MN Sofan Business Development Services. All rights reserved.</p><p class="text-[10px] text-gray-700 tracking-wider uppercase">Fully compliant with UAE regulations</p></div>
+   375→   375→    </div>
+   376→   376→</footer>
+   377→   377→
+   378→   378→<!-- ═══════════════════════════════════════════════════════════════ -->
+   379→   379→<!-- AUTOCLAW AI CHAT WIDGET -->
+   380→   380→<!-- ═══════════════════════════════════════════════════════════════ -->
+   381→   381→<div id="chatWidget" class="chat-widget collapsed fixed bottom-6 right-6 z-50 overflow-hidden" style="width:60px;height:60px;border-radius:50%;">
+   382→   382→    <button id="chatToggleBtn" onclick="toggleChat()" class="absolute inset-0 w-full h-full bg-[#C9A84C] rounded-full flex items-center justify-center hover:bg-[#E2CC7E] transition-all duration-300 z-10 shadow-[0_4px_25px_rgba(201,168,76,0.35)]">
+   383→   383→        <i data-lucide="message-circle" class="w-6 h-6 text-[#0A0A0A] transition-transform duration-300" id="chatIconOpen"></i>
+   384→   384→        <i data-lucide="x" class="w-6 h-6 text-[#0A0A0A] hidden transition-transform duration-300" id="chatIconClose"></i>
+   385→   385→    </button>
+   386→   386→    <div id="chatPanel" class="hidden absolute inset-0 bg-[#0A0A0A] rounded-[20px] flex flex-col border border-[#C9A84C]/15 overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.5)]">
+   387→   387→        <div class="flex items-center gap-3 p-4 border-b border-white/[0.06] bg-[#0A0A0A]">
+   388→   388→            <div class="logo-circle w-9 h-9 border border-[#C9A84C]/30 bg-[#0A0A0A]"><img src="https://z-cdn-media.chatglm.cn/files/2708862f-1650-43ba-8f61-1600c11c6525.png?auth_key=1883212066-e3f2fcfccb4f46f4838fc8a470a3cbd9-0-37f6e50c8a96c36397bd04e3218cf5c8" alt="AI" class="logo-img"></div>
+   389→   389→            <div class="flex-1 min-w-0"><h4 class="text-[13px] font-semibold text-white truncate">MN Sofan AI Agent</h4><div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span><span class="text-[10px] text-emerald-400">Online • AutoClaw</span></div></div>
+   390→   390→            <button onclick="toggleChat()" class="p-1.5 text-gray-500 hover:text-white transition-colors rounded-lg hover:bg-white/5"><i data-lucide="minus" class="w-4 h-4"></i></button>
+   391→   391→        </div>
+   392→   392→        <div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-4" style="scrollbar-width:thin;scrollbar-color:#C9A84C33 transparent;">
+   393→   393→            <div class="flex items-start gap-2.5">
+   394→   394→                <div class="logo-circle w-7 h-7 border border-[#C9A84C]/30 flex-shrink-0 mt-0.5 bg-[#0A0A0A]"><img src="https://z-cdn-media.chatglm.cn/files/2708862f-1650-43ba-8f61-1600c11c6525.png?auth_key=1883212066-e3f2fcfccb4f46f4838fc8a470a3cbd9-0-37f6e50c8a96c36397bd04e3218cf5c8" alt="" class="logo-img"></div>
+   395→   395→                <div class="bg-[#141414] border border-white/[0.04] rounded-2xl rounded-tl-sm px-4 py-3 max-w-[88%]">
+   396→   396→                    <p class="text-[13px] text-gray-200 leading-relaxed">Welcome to <strong class="text-[#C9A84C]">MN Sofan</strong>! 👋</p>
+   397→   397→                    <p class="text-[13px] text-gray-300 mt-2 leading-relaxed">I can help you with:</p>
+   398→   398→                    <div class="mt-2 space-y-1.5">
+   399→   399→                        <span class="block text-[12px] text-gray-400 cursor-pointer hover:text-[#C9A84C] transition-colors" onclick="sendQuickMessage('I need a website')">🌐 Website & App inquiries</span>
+   400→   400→                        <span class="block text-[12px] text-gray-400 cursor-pointer hover:text-[#C9A84C] transition-colors" onclick="sendQuickMessage('SEO pricing')">📊 SEO & Marketing info</span>
+   401→   401→                        <span class="block text-[12px] text-gray-400 cursor-pointer hover:text-[#C9A84C] transition-colors" onclick="sendQuickMessage('Pricing info')">💰 Pricing & packages</span>
+   402→   402→                        <span class="block text-[12px] text-gray-400 cursor-pointer hover:text-[#C9A84C] transition-colors" onclick="sendQuickMessage('Connect me to WhatsApp')">💬 Connect to WhatsApp</span>
+   403→   403→                    </div>
+   404→   404→                </div>
+   405→   405→            </div>
+   406→   406→        </div>
+   407→   407→        <div class="px-4 py-2 border-t border-white/[0.03] flex gap-2 overflow-x-auto" style="scrollbar-width:none;-ms-overflow-style:none;">
+   408→   408→            <button onclick="sendQuickMessage('I need a website')" class="flex-shrink-0 px-3 py-1.5 bg-[#C9A84C]/[0.07] border border-[#C9A84C]/15 rounded-full text-[11px] text-[#C9A84C] hover:bg-[#C9A84C]/15 transition-all duration-200">🌐 Website</button>
+   409→   409→            <button onclick="sendQuickMessage('SEO info')" class="flex-shrink-0 px-3 py-1.5 bg-[#C9A84C]/[0.07] border border-[#C9A84C]/15 rounded-full text-[11px] text-[#C9A84C] hover:bg-[#C9A84C]/15 transition-all duration-200">📊 SEO</button>
+   410→   410→            <button onclick="sendQuickMessage('Pricing')" class="flex-shrink-0 px-3 py-1.5 bg-[#C9A84C]/[0.07] border border-[#C9A84C]/15 rounded-full text-[11px] text-[#C9A84C] hover:bg-[#C9A84C]/15 transition-all duration-200">💰 Pricing</button>
+   411→   411→            <button onclick="sendQuickMessage('Connect me to WhatsApp')" class="flex-shrink-0 px-3 py-1.5 bg-emerald-500/[0.07] border border-emerald-500/15 rounded-full text-[11px] text-emerald-400 hover:bg-emerald-500/15 transition-all duration-200">💬 WhatsApp</button>
+   412→   412→        </div>
+   413→   413→        <div class="p-3 border-t border-white/[0.04] bg-[#0A0A0A]">
+   414→   414→            <form id="chatForm" class="flex items-center gap-2">
+   415→   415→                <input type="text" id="chatInput" class="flex-1 px-3.5 py-2.5 bg-[#141414] border border-white/[0.06] rounded-xl text-[13px] text-white placeholder-gray-600 focus:outline-none focus:border-[#C9A84C]/30 transition-all duration-200" placeholder="Type your message...">
+   416→   416→                <button type="submit" class="p-2.5 bg-[#C9A84C] rounded-xl hover:bg-[#E2CC7E] transition-colors duration-200 flex-shrink-0"><i data-lucide="send" class="w-4 h-4 text-[#0A0A0A]"></i></button>
+   417→   417→            </form>
+   418→   418→            <p class="text-[9px] text-gray-700 mt-1.5 text-center tracking-wide">Powered by AutoClaw AI</p>
+   419→   419→        </div>
+   420→   420→    </div>
+   421→   421→</div>
+   422→   422→
+   423→   423→<!-- ═══════════════════════════════════════════════════════════════ -->
+   424→   424→<!-- JAVASCRIPT -->
+   425→   425→<!-- ═══════════════════════════════════════════════════════════════ -->
+   426→   426→<script>
+   427→   427→(function() {
+   428→   428→    'use strict';
+   429→   429→    document.addEventListener('DOMContentLoaded', () => { if (typeof lucide !== 'undefined') lucide.createIcons(); });
+   430→   430→
+   431→   431→    // Scroll Progress
+   432→   432→    const progressBar = document.getElementById('scrollProgress');
+   433→   433→    if (progressBar) { window.addEventListener('scroll', () => { const s = window.scrollY; const h = document.documentElement.scrollHeight - window.innerHeight; progressBar.style.width = (s/h)*100 + '%'; }, { passive: true }); }
+   434→   434→
+   435→   435→    // Navbar
+   436→   436→    const navbar = document.getElementById('navbar');
+   437→   437→    if (navbar) { let last = 0; window.addEventListener('scroll', () => { const c = window.scrollY; if (c > 60) { navbar.classList.add('bg-[#0A0A0A]/90', 'backdrop-blur-xl', 'shadow-[0_1px_30px_rgba(0,0,0,0.3)]', 'border-b', 'border-white/[0.03]'); } else { navbar.classList.remove('bg-[#0A0A0A]/90', 'backdrop-blur-xl', 'shadow-[0_1px_30px_rgba(0,0,0,0.3)]', 'border-b', 'border-white/[0.03]'); } navbar.style.transform = (c > last && c > 400) ? 'translateY(-100%)' : 'translateY(0)'; last = c; }, { passive: true }); }
+   438→   438→
+   439→   439→    // Mobile Menu
+   440→   440→    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+   441→   441→    const mobileMenu = document.getElementById('mobileMenu');
+   442→   442→    const hbLines = document.querySelector('.hamburger-lines');
+   443→   443→    if (mobileMenuBtn && mobileMenu) { mobileMenuBtn.addEventListener('click', () => { const isOpen = mobileMenu.classList.contains('pointer-events-none'); if (isOpen) { mobileMenu.classList.remove('opacity-0', 'pointer-events-none'); mobileMenu.classList.add('opacity-100'); if(hbLines) hbLines.classList.add('active'); document.body.style.overflow = 'hidden'; } else { closeMobileMenu(); } }); }
+   444→   444→    window.closeMobileMenu = function() { if(mobileMenu) { mobileMenu.classList.add('opacity-0', 'pointer-events-none'); mobileMenu.classList.remove('opacity-100'); } if(hbLines) hbLines.classList.remove('active'); document.body.style.overflow = ''; };
+   445→   445→
+   446→   446→    // Reveal
+   447→   447→    const revealEls = document.querySelectorAll('.reveal');
+   448→   448→    if (revealEls.length) { const obs = new IntersectionObserver((entries) => { entries.forEach((entry, i) => { if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('visible'), i * 80); obs.unobserve(entry.target); } }); }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }); revealEls.forEach(el => obs.observe(el)); }
+   449→   449→
+   450→   450→    // Cursor
+   451→   451→    const cursorDot = document.getElementById('cursorDot');
+   452→   452→    const cursorRing = document.getElementById('cursorRing');
+   453→   453→    if (cursorDot && cursorRing && window.innerWidth >= 1024) { let mX=0,mY=0,rX=0,rY=0; document.addEventListener('mousemove', (e) => { mX=e.clientX; mY=e.clientY; cursorDot.style.left=mX+'px'; cursorDot.style.top=mY+'px'; }); function aRing(){ rX+=(mX-rX)*0.12; rY+=(mY-rY)*0.12; cursorRing.style.left=rX+'px'; cursorRing.style.top=rY+'px'; requestAnimationFrame(aRing); } aRing(); document.querySelectorAll('a,button,input,textarea,select,.tilt-card,.service-card').forEach(el => { el.addEventListener('mouseenter', () => { cursorDot.style.transform='translate(-50%,-50%) scale(2.5)'; cursorDot.style.background='#E2CC7E'; cursorRing.style.transform='translate(-50%,-50%) scale(1.5)'; cursorRing.style.borderColor='rgba(201,168,76,0.6)'; }); el.addEventListener('mouseleave', () => { cursorDot.style.transform='translate(-50%,-50%) scale(1)'; cursorDot.style.background='#C9A84C'; cursorRing.style.transform='translate(-50%,-50%) scale(1)'; cursorRing.style.borderColor='rgba(201,168,76,0.25)'; }); }); }
+   454→   454→
+   455→   455→    // Tilt Cards
+   456→   456→    document.querySelectorAll('.tilt-card').forEach(card => { card.addEventListener('mousemove', (e) => { if(window.innerWidth<1024) return; const r=card.getBoundingClientRect(); const x=e.clientX-r.left; const y=e.clientY-r.top; const rX=((y-r.height/2)/(r.height/2))*-6; const rY=((x-r.width/2)/(r.width/2))*6; card.style.transform=`perspective(800px) rotateX(${rX}deg) rotateY(${rY}deg) translateY(-4px)`; }); card.addEventListener('mouseleave', () => { card.style.transform='perspective(800px) rotateX(0) rotateY(0) translateY(0)'; }); });
+   457→   457→
+   458→   458→    // Magnetic Buttons
+   459→   459→    document.querySelectorAll('.magnetic-btn').forEach(btn => { btn.addEventListener('mousemove', (e) => { if(window.innerWidth<1024) return; const r=btn.getBoundingClientRect(); const x=e.clientX-r.left-r.width/2; const y=e.clientY-r.top-r.height/2; btn.style.transform=`translate(${x*0.2}px,${y*0.2}px)`; }); btn.addEventListener('mouseleave', () => { btn.style.transform='translate(0,0)'; }); });
+   460→   460→
+   461→   461→    // Hero Parallax
+   462→   462→    const heroBg = document.getElementById('heroBg');
+   463→   463→    if (heroBg) { window.addEventListener('scroll', () => { const s=window.scrollY; if(s<window.innerHeight) heroBg.style.transform=`scale(1.1) translateY(${s*0.15}px)`; }, { passive: true }); }
+   464→   464→
+   465→   465→    // Form
+   466→   466→    const contactForm = document.getElementById('contactForm');
+   467→   467→    if (contactForm) { contactForm.addEventListener('submit', function(e) { e.preventDefault(); const fd=new FormData(this); contactForm.style.display='none'; document.getElementById('formSuccess').classList.remove('hidden'); setTimeout(()=>{ const n=fd.get('name')||'Client'; const s=fd.get('service')||'General'; window.open(`https://wa.me/971552079989?text=${encodeURIComponent(`Hi MN Sofan! I'm ${n}. Inquiry about: ${s}.`)}`, '_blank'); }, 2000); }); }
+   468→   468→
+   469→   469→    // ═══ CHAT WIDGET ═══
+   470→   470→    let chatOpen = false;
+   471→   471→    window.toggleChat = function() { chatOpen = !chatOpen; const w=document.getElementById('chatWidget'), p=document.getElementById('chatPanel'), o=document.getElementById('chatIconOpen'), c=document.getElementById('chatIconClose'); if(chatOpen){w.classList.remove('collapsed');w.classList.add('expanded');p.classList.remove('hidden');o.classList.add('hidden');c.classList.remove('hidden');setTimeout(()=>{const i=document.getElementById('chatInput');if(i)i.focus();},500);}else{w.classList.add('collapsed');w.classList.remove('expanded');p.classList.add('hidden');o.classList.remove('hidden');c.classList.add('hidden');} };
+   472→   472→    window.sendQuickMessage = function(msg) { addUserMessage(msg); generateAIResponse(msg); if(!chatOpen) toggleChat(); };
+   473→   473→    const chatForm = document.getElementById('chatForm');
+   474→   474→    if(chatForm){chatForm.addEventListener('submit',function(e){e.preventDefault();const i=document.getElementById('chatInput');const m=i.value.trim();if(!m)return;addUserMessage(m);i.value='';generateAIResponse(m);});}
+   475→   475→
+   476→   476→    function addUserMessage(t){const c=document.getElementById('chatMessages');const d=document.createElement('div');d.className='flex items-start gap-2.5 justify-end';d.innerHTML=`<div class="bg-[#C9A84C]/15 border border-[#C9A84C]/10 rounded-2xl rounded-tr-sm px-4 py-3 max-w-[88%]"><p class="text-[13px] text-gray-200 leading-relaxed">${escapeHtml(t)}</p></div>`;c.appendChild(d);c.scrollTop=c.scrollHeight;}
+   477→   477→
+   478→   478→    function generateAIResponse(userMsg){const c=document.getElementById('chatMessages');const t=document.createElement('div');t.className='flex items-start gap-2.5 typing-indicator';t.innerHTML=`<div class="logo-circle w-7 h-7 border border-[#C9A84C]/30 flex-shrink-0 mt-0.5 bg-[#0A0A0A]"><img src="https://z-cdn-media.chatglm.cn/files/2708862f-1650-43ba-8f61-1600c11c6525.png?auth_key=1883212066-e3f2fcfccb4f46f4838fc8a470a3cbd9-0-37f6e50c8a96c36397bd04e3218cf5c8" alt="" class="logo-img"></div><div class="bg-[#141414] border border-white/[0.04] rounded-2xl rounded-tl-sm px-4 py-3"><div class="flex gap-1.5"><div class="typing-dot w-1.5 h-1.5 bg-[#C9A84C] rounded-full"></div><div class="typing-dot w-1.5 h-1.5 bg-[#C9A84C] rounded-full"></div><div class="typing-dot w-1.5 h-1.5 bg-[#C9A84C] rounded-full"></div></div></div>`;c.appendChild(t);c.scrollTop=c.scrollHeight;const low=userMsg.toLowerCase();let r='',a='';if(low.includes('whatsapp')||low.includes('connect me')||low.includes('human')||low.includes('talk')||low.includes('agent')||low.includes('call')){r=`I'll connect you to our team via WhatsApp right away! 📞\n\nOur team typically responds within 5 minutes during business hours.\n\nOutside hours, I'll make sure your message is delivered first thing.`;a=`<a href="https://wa.me/971552079989?text=Hi%20MN%20Sofan!%20I%20was%20chatting%20with%20your%20AI%20agent%20and%20would%20like%20to%20speak%20with%20someone." target="_blank" class="inline-flex items-center gap-1.5 mt-3 px-4 py-2.5 bg-emerald-600 text-white text-[12px] font-bold rounded-xl hover:bg-emerald-500 transition-colors shadow-lg">💬 Open WhatsApp</a>`;}else if(low.includes('website')||low.includes('web')){r=`Great choice! 🌐 We offer:\n\n• <strong>Landing Pages</strong> — from AED 3,000\n• <strong>Corporate Sites</strong> — from AED 8,000\n• <strong>E-commerce Stores</strong> — from AED 15,000\n\nAll bilingual (Arabic + English). Want a custom quote?`;a=`<div class="flex gap-2 mt-3 flex-wrap"><button onclick="sendQuickMessage('Connect me to WhatsApp')" class="px-3 py-1.5 bg-emerald-600/80 text-white text-[11px] font-bold rounded-lg hover:bg-emerald-500 transition-colors">💬 Get Quote</button></div>`;}else if(low.includes('seo')){r=`Our SEO campaigns are built for the UAE! 📊\n\n• <strong>Local SEO</strong> — Google Maps & local search\n• <strong>Arabic SEO</strong> — Bilingual optimization\n• <strong>Technical SEO</strong> — Speed & structure\n\nPackages start from AED 2,500/month.`;a=`<button onclick="sendQuickMessage('Connect me to WhatsApp')" class="px-3 py-1.5 bg-emerald-600/80 text-white text-[11px] font-bold rounded-lg hover:bg-emerald-500 transition-colors mt-3">💬 Discuss Plan</button>`;}else if(low.includes('price')||low.includes('budget')||low.includes('how much')){r=`Flexible pricing! 💰\n\n• <strong>Starter</strong> — AED 3,000–15,000\n• <strong>Professional</strong> — AED 15,000–50,000\n• <strong>Enterprise</strong> — AED 50,000+\n\nNo hidden fees, UAE-compliant invoicing.`;a=`<button onclick="sendQuickMessage('Connect me to WhatsApp')" class="px-3 py-1.5 bg-emerald-600/80 text-white text-[11px] font-bold rounded-lg hover:bg-emerald-500 transition-colors mt-3">💬 Get Exact Quote</button>`;}else{r=`Thank you! 😊\n\nFor the most detailed response, I recommend connecting via WhatsApp.\n\nI can help with service info, pricing, and timelines.`;a=`<button onclick="sendQuickMessage('Connect me to WhatsApp')" class="px-3 py-1.5 bg-emerald-600/80 text-white text-[11px] font-bold rounded-lg hover:bg-emerald-500 transition-colors mt-3">💬 Connect to Team</button>`;}setTimeout(()=>{const ti=c.querySelector('.typing-indicator');if(ti)ti.remove();const d=document.createElement('div');d.className='flex items-start gap-2.5';d.innerHTML=`<div class="logo-circle w-7 h-7 border border-[#C9A84C]/30 flex-shrink-0 mt-0.5 bg-[#0A0A0A]"><img src="https://z-cdn-media.chatglm.cn/files/2708862f-1650-43ba-8f61-1600c11c6525.png?auth_key=1883212066-e3f2fcfccb4f46f4838fc8a470a3cbd9-0-37f6e50c8a96c36397bd04e3218cf5c8" alt="" class="logo-img"></div><div class="bg-[#141414] border border-white/[0.04] rounded-2xl rounded-tl-sm px-4 py-3 max-w-[88%]"><p class="text-[13px] text-gray-200 leading-relaxed whitespace-pre-line">${r}</p>${a}<p class="text-[9px] text-gray-700 mt-2.5 tracking-wide">AutoClaw AI • Just now</p></div>`;c.appendChild(d);c.scrollTop=c.scrollHeight;if(typeof lucide!=='undefined')lucide.createIcons();},1200+Math.random()*800);}
+   479→   479→    function escapeHtml(t){const d=document.createElement('div');d.appendChild(document.createTextNode(t));return d.innerHTML;}
+   480→   480→
+   481→   481→    // Auto prompt chat
+   482→   482→    setTimeout(()=>{if(!chatOpen&&!sessionStorage.getItem('chatPrompted')){sessionStorage.setItem('chatPrompted','true');const b=document.getElementById('chatToggleBtn');if(b){b.style.animation='pulseGold 1.5s ease-in-out 3';setTimeout(()=>{b.style.animation='';},5000);}}},10000);
+   483→   483→
+   484→   484→    // Smooth scroll
+   485→   485→    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t){window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-80,behavior:'smooth'});}});});
+   486→   486→})();
+   487→   487→</script>
+   488→   488→</body>
+   489→   489→</html>
