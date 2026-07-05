@@ -58,7 +58,7 @@ jobs:
           # Patch layout.tsx metadataBase to avoid build errors
           sed -i 's|new URL("https://mnsofan.space-z.ai")|new URL("https://sofan1.github.io/sofan-website")|' src/app/layout.tsx
 
-          bun run build
+          npx next build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
